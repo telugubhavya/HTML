@@ -1,0 +1,97 @@
+<!doctype html>
+<html> 
+<head> 
+<script> 
+function validateform()                                    
+{ 
+    var name = document.forms["RegForm"]["Name"];               
+    var email = document.forms["RegForm"]["EMail"];    
+    var phone = document.forms["RegForm"]["Mobile"];  
+    var what =  document.forms["RegForm"]["Subject"];  
+    var password = document.forms["RegForm"]["Password"];  
+    var age = document.forms["RegForm"]["Age"];  
+   
+    if (name.value == "")                                  
+    { 
+        window.alert("Please enter your name."); 
+        name.focus(); 
+        return false; 
+    } 
+   
+    if (age.value == "")                               
+    { 
+        window.alert("Please enter your age."); 
+        age.focus(); 
+        return false; 
+    } 
+       
+    if (email.value == "")                                   
+    { 
+        window.alert("Please enter a valid e-mail address."); 
+        email.focus(); 
+        return false; 
+    } 
+   
+    if (phone.value == "")                           
+    { 
+        window.alert("Please enter your phone number."); 
+        phone.focus(); 
+        return false; 
+    } 
+   
+    if (password.value == "")                        
+    { 
+        window.alert("Please enter your password"); 
+        password.focus(); 
+        return false; 
+    } 
+   
+    if (what.selectedIndex < 1)                  
+    { 
+        alert("Please enter your course."); 
+        what.focus(); 
+        return false; 
+    } 
+   
+    return true; 
+}</script> 
+
+<style> 
+body {
+	background-image: linear-gradient(120deg,pink,yellow,black);
+	font-size: 20px;
+	padding: 50px;
+	color: black;
+}
+</style>
+</head> 
+   
+<body>
+<h1 style="text-align: center"> REGISTRATION FORM </h1>           
+<form name="RegForm" action="/submit.php" onsubmit="return validateform()" method="post">  
+      
+    <p>Name: <input type="text" size=60 name="Name"</p><br> 
+    <h4>Gender</h4>
+	<input type="radio" id="male" name="gender" value="male">
+	<label for="male">Male</label><br>
+	<input type="radio" id="female" name="gender" value="female">
+	<label for="female">Female</label><br><br>     	
+    <p> Age: <input type="text" size=65 name="Age" </p><br> 
+    <p>E-mail Address: <input type="text" size=50 name="Email" </p><br> 
+     <p>Password: <input type="text" size=58 name="Password" </p><br> 
+    <p>Mobile: <input type="text" size=60 name="Mobile" </p><br>   
+           
+    <p>SELECT YOUR COURSE    
+        <select type="text" value="" name="Subject"> 
+            <option>CSE</option> 
+            <option>ECE</option> 
+            <option>EEE</option> 
+            <option>MECH</option> 
+            <option>validateform</option> 
+        </select></p><br>
+		<p><input type="submit" value="send" name="Submit">      
+        <input type="reset" value="Reset" name="Reset">   
+    </p>       
+</form> 
+</body> 
+</html> 
